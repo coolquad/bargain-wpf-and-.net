@@ -1,0 +1,96 @@
+﻿@model Bargain.Models.BargainModel
+
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                    <div class="heading_s1 text-center">
+                        <h2>Competiton Bargains</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="course_list">
+                    <div class="row">
+
+                        @if (Model.listBargainModel.Count > 0)
+                        {
+                            foreach (var item in Model.listBargainModel)
+                            {
+                                <div class="col-md-12">
+                                    <div class="content_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                                        <div class="content_img">
+
+                                            <div id="carouselExample" class="banner_content_wrap carousel slide carousel-fade" data-ride="carousel">
+
+                                                <div class="carousel-inner">
+                                                    @{int i = 0;}
+                                                    @foreach (var items in item.listBagainsImages)
+                                                    {
+                                                        i++;
+                                                        var active = i == 1 ? "active" : "";
+                                                        <div class="carousel-item @active">
+                                                            <img src="../Images/@items.fileName" alt="">
+                                                        </div>
+                                                    }
+                                                </div>
+                                                @*<div class="carousel-nav carousel_style1">
+                                                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                                                        <i class="ion-chevron-left"></i>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                                                        <i class="ion-chevron-right"></i>
+                                                    </a>
+                                                </div>*@
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="content_desc">
+                                            <h4 class="content_title"><a href="Detail.aspx"> @item.Heading</a><span style="color:#721C24;float:right">@item.Special</span></h4>
+
+                                            <div style="height:130px;overflow:hidden">@Html.Raw(HttpUtility.HtmlDecode(item.Description))</div>
+
+
+                                            <div class="courses_info">
+                                                <div class="rating_stars">
+                                                    <ul class="list_none content_meta">
+                                                        <li><a id="ALikValue+@item.ID" href="#" style="color:green !important; font-weight:bold;" onclick="addLike(@item.ID,@item.BargainLike,1);"><i class="fa fa-thumbs-up"></i><span id="finalReceiptForm:text3" class="LikValue+@item.ID">@item.BargainLike</span> </a></li>
+                                                        <li><a id="ADisLikValue+@item.ID" href="#" style="color:red !important; font-weight:bold;" onclick="addLike(@item.ID,@item.BargainDislike,2);"><i class="fa fa-thumbs-down" aria-hidden="true"></i><span class="DisValue+@item.ID">@item.BargainDislike</span> </a></li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content_footer">
+                                            <div class="teacher">
+                                                @*<a href="#"><span>Posted By: @item.PostedName</span></a><br />
+                                                <a href="#"><span>Dated: @item.EntryDate.ToString("dd,MMM yyyy")</span></a>*@
+                                                <span><i class="fa fa-user"></i> @item.PostedName</span> | <span><i class="fa fa-calendar"></i> @item.EntryDate.ToString("dd,MMM yyyy")</span>
+                                            </div>
+                                            <div class="price">
+                                                @*@Html.ActionLink("Post Comment", "Detail","Home", new { id = @item.ID }, new { @class = "alert alert-success" })*@
+                                                @Html.ActionLink("Post Comment", "Detail","Home", new { id = @item.ID }, new { @class = "btn btn-default rounded-0 btn-xs" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+      </div>
+</section>
+

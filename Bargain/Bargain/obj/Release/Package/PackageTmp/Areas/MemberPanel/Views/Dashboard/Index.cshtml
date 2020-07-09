@@ -1,0 +1,97 @@
+﻿@model Bargain.Models.BargainModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<title>Dashboard</title>
+<div>
+    @*<div class="page-content">*@
+    <div class="page-bar">
+        <div class="page-title-breadcrumb">
+            <div class=" pull-left">
+                <div class="page-title">Dashboard</div>
+            </div>
+            <ol class="breadcrumb page-breadcrumb pull-right">
+                <li>
+                    <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="#">Dashboard</a>&nbsp;<i class="fa fa-angle-right"></i>
+                </li>
+
+                <li class="active">Dashboard</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="card card-topline-aqua">
+
+                <div class="card-body ">
+                    <div class="row table-padding">
+                        <a href="~/MemberPanel/Bargain/Index" class="btn btn-info pull-right">Add Bargain</a>
+
+                    </div>
+                    @if (Model.listBargainModel.Count > 0)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover table-checkable order-column" style="width: 100%" id="example4">
+                                <thead>
+                                    <tr>
+                                        <th># </th>
+                                        <th>Heading </th>
+                                        <th width="50px">URL </th>
+                                        <th>StartDate </th>
+                                        <th>EndDate </th>
+                                        <th>Promocode </th>
+                                        <th>Tags </th>
+                                        <th>Free </th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @{int i = 1;
+                                    foreach (var item in Model.listBargainModel)
+                                    {
+                                        <tr class="odd gradeX">
+                                            <td><span>@i</span></td>
+                                            <td>@item.Heading</td>
+
+                                            <td>@item.URL</td>
+                                            <td>@item.StartDate.ToString("dd MMM yyyy")</td>
+                                            <td>@item.EndDate.ToString("dd MMM yyyy")</td>
+                                            <td>@item.Promocode</td>
+                                            <td>@item.Tags</td>
+                                            <td>@item.Free</td>
+                                            <td>@item.ApproveStatus</td>
+
+                                        </tr>
+                                        i++;
+                                    }
+                                    }
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    }
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    @*</div>*@
+</div>
+
+@if (TempData["msg"] != "")
+{
+    @Html.Raw(TempData["msg"]);
+
+
+}

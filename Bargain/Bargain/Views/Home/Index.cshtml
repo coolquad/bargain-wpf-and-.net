@@ -1,0 +1,719 @@
+﻿@model Bargain.Models.BargainModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@*<section class="banner_section p-0 full_screen">
+        <div id="carouselExampleFade" class="banner_content_wrap carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active background_bg overlay_bg_40" data-img-src="../assets/images/banner2.jpg">
+                    <div class="banner_slide_content">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-9 col-sm-12 text-center">
+                                    <div class="banner_content animation text_white" data-animation="fadeIn" data-animation-delay="0.8s">
+                                        <h2 class="font-weight-bold animation text-uppercase" data-animation="fadeInDown" data-animation-delay="1s">Welcome To Show Bargain</h2>
+                                        <p class="animation" data-animation="fadeInUp" data-animation-delay="1.5s">Lorem is simply text of the printing and typesetting industry.</p>
+                                        <a class="btn btn-default animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">View Bargains</a>
+                                        <a class="btn btn-outline-white animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">Competitions</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item background_bg overlay_bg_40" data-img-src="../assets/images/banner1.jpg">
+                    <div class="banner_slide_content">
+                        <div class="container">
+
+                            <div class="row justify-content-center">
+                                <div class="col-lg-9 col-sm-12 text-center">
+                                    <div class="banner_content animation text_white" data-animation="fadeIn" data-animation-delay="0.8s">
+                                        <h2 class="font-weight-bold animation text-uppercase" data-animation="fadeInDown" data-animation-delay="1s"> Online Bargains</h2>
+                                        <p class="animation" data-animation="fadeInUp" data-animation-delay="1.5s">Contrary to popular belief, Lorem Ipsum is not simply random</p>
+                                        <a class="btn btn-default animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">Forum</a>
+                                        <a class="btn btn-outline-white animation" href="#" data-animation="fadeInUp" data-animation-delay="1.8s">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-nav carousel_style1">
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <i class="ion-chevron-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <i class="ion-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>*@
+
+<!-- END SECTION BANNER -->
+<!-- START SECTION COURSES -->
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                    <div class="heading_s1 text-center">
+                        <h2>Latest Bargains</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="course_list">
+                    <div class="row">
+
+                        @if (Model.listBargainModel.Count > 0)
+                        {
+                            foreach (var item in Model.listBargainModel)
+                            {
+                                <div class="col-md-12">
+                                    <div class="content_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                                        <div class="content_img" >
+                                            
+                                            <div id="carouselExample" class="banner_content_wrap carousel slide carousel-fade" data-ride="carousel">
+                                               
+                                                <div class="carousel-inner">
+                                                    @{int i = 0;}
+                                                    @foreach (var items in item.listBagainsImages)
+                                                    {
+                                                        i++;
+                                                        var active = i == 1 ? "active" : "";
+                                                        <div class="carousel-item @active">
+                                                            <img src="../Images/@items.fileName" alt="" >
+                                                        </div>
+                                                    }
+                                                </div>
+                                                @*<div class="carousel-nav carousel_style1">
+                                                    <a class="carousel-control-prev" href="#carouselExample+@item.ID" role="button" data-slide="prev">
+                                                        <i class="ion-chevron-left"></i>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselExample+@item.ID" role="button" data-slide="next">
+                                                        <i class="ion-chevron-right"></i>
+                                                    </a>
+                                                </div>*@
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="content_desc">
+                                            <h4 class="content_title"><a href="Detail.aspx"> @item.Heading</a><span style="color:#721C24;float:right">@item.Special</span></h4>
+
+                                            <div style="height:50px;overflow:hidden">@Html.Raw(HttpUtility.HtmlDecode(item.Description))</div>
+
+
+                                            <div class="courses_info">
+                                                <div class="rating_stars">
+                                                    <ul class="list_none content_meta">
+                                                        <li><a id="ALikValue+@item.ID" href="#" style="color:green !important; font-weight:bold;" onclick="addLike(@item.ID,@item.BargainLike,1);"><i class="fa fa-thumbs-up"></i><span id="finalReceiptForm:text3" class="LikValue+@item.ID">@item.BargainLike</span> </a></li>
+                                                        <li><a id="ADisLikValue+@item.ID" href="#" style="color:red !important; font-weight:bold;" onclick="addLike(@item.ID,@item.BargainDislike,2);"><i class="fa fa-thumbs-down" aria-hidden="true"></i><span class="DisValue+@item.ID">@item.BargainDislike</span> </a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content_footer">
+                                            <div class="teacher">
+                                             <span><i class="fa fa-user"></i> @item.PostedName</span> | <span><i class="fa fa-calendar"></i> @item.EntryDate.ToString("dd,MMM yyyy")</span>
+                                                
+                                            </div>
+                                            <div class="price">
+                                                @Html.ActionLink("Post Comment", "Detail", new { id = @item.ID }, new { @class = "btn btn-default rounded-0 btn-xs" })
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.07s">
+                    <div class="medium_divider"></div>
+                    <a href="#" class="btn btn-default rounded-0">Yesterday Bargains <i class="ion-ios-arrow-thin-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="course_list">
+                    <div class="row">
+
+                        @if (Model.list2BargainModel.Count > 0)
+                        {
+                            foreach (var item in Model.list2BargainModel)
+                            {
+                                <div class="col-md-12">
+                                    <div class="content_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                                        <div class="content_img">
+
+                                            <div id="carouselExampleFade" class="banner_content_wrap carousel slide carousel-fade" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    @{int i = 0;}
+                                                    @foreach (var items in item.listBagainsImages)
+                                                    {
+                                                        i++;
+                                                        var active = i == 1 ? "active" : "";
+                                                        <div class="carousel-item @active">
+                                                            <img src="../Images/@items.fileName" alt="">
+                                                        </div>
+                                                    }
+                                                </div>
+                                                @*<div class="carousel-nav carousel_style1">
+                                                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                                        <i class="ion-chevron-left"></i>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                                        <i class="ion-chevron-right"></i>
+                                                    </a>
+                                                </div>*@
+                                            </div>
+
+                                            @*<a href="Detail.aspx"><img src="~/Images/@item.ImagePath" alt="course_img1" /></a>*@
+
+                                        </div>
+                                        <div class="content_desc">
+                                            <h4 class="content_title"><a href="Detail.aspx"> @item.Heading</a><span style="color:#721C24;float:right">@item.Special</span></h4>
+
+                                            <div style="height:50px;overflow:hidden">@Html.Raw(HttpUtility.HtmlDecode(item.Description))</div>
+
+
+                                            <div class="courses_info">
+                                                <div class="rating_stars">
+                                                    <ul class="list_none content_meta">
+                                                        <li><a id="ALikValue+@item.ID" href="#" style="color:green !important; font-weight:bold;" onclick="addLike(@item.ID,@item.BargainLike,1);"><i class="fa fa-thumbs-up"></i><span id="finalReceiptForm:text3" class="LikValue+@item.ID">@item.BargainLike</span> </a></li>
+                                                        <li><a id="ADisLikValue+@item.ID" href="#" style="color:red !important; font-weight:bold;" onclick="addLike(@item.ID,@item.BargainDislike,2);"><i class="fa fa-thumbs-down"></i><span class="DisValue+@item.ID">@item.BargainDislike</span> </a></li>
+                                                     
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="content_footer">
+                                            <div class="teacher">
+                                                <span><i class="fa fa-user"></i> @item.PostedName</span> | <span><i class="fa fa-calendar"></i> @item.EntryDate.ToString("dd,MMM yyyy")</span>
+
+                                            </div>
+                                            <div class="price">
+                                                @Html.ActionLink("Post Comment", "Detail", new { id = @item.ID }, new { @class = "btn btn-default rounded-0 btn-xs" })
+
+                                            </div>
+                                        </div>
+                                        @*<div class="content_footer">
+                                            <div class="teacher">
+                                                <a href="#"><span>Posted By: @item.PostedName</span></a><br />
+                                                <a href="#"><span>Dated: @item.EntryDate.ToString("dd,MMM yyyy")</span></a>
+                                            </div>
+                                            <div class="price">
+                                                @Html.ActionLink("Post Comment", "Detail", new { id = @item.ID }, new { @class = "alert alert-success" })
+                                                <a href="Detail.aspx#post-comment" class="alert alert-success">Post Comment</a>
+                                            </div>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            }
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                        <div class="heading_s1 text-center">
+                            <h2>Popular Bargains</h2>
+                        </div>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="content_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                        <div class="content_img">
+                            <a href="Detail.aspx"><img src="~/assets/images/course_img1.jpg" alt="course_img1" /></a>
+                        </div>
+                        <div class="content_desc">
+                            <h4 class="content_title"><a href="Detail.aspx">Heading of Deal</a></h4>
+                            <p>Some Description : If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                            <div class="courses_info">
+                                <div class="rating_stars">
+                                    <ul class="list_none content_meta">
+                                        <li><a href="#">Dated: 31, May 2019</a></li>
+
+                                    </ul>
+                                </div>
+                                <ul class="list_none content_meta">
+                                    <li><a href="#"><i class="ti-thumb-up"></i>31</a></li>
+                                    <li><a href="#"><i class="ti-thumb-down"></i>10</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content_footer">
+                            <div class="teacher">
+                                <a href="#"> Posted by: Alia Noor</span></a>
+                            </div>
+                            <div class="price">
+                                <span class="alert alert-success">Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="content_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                        <div class="content_img">
+                            <a href="Detail.aspx"><img src="~/assets/images/course_img2.jpg" alt="course_img1" /></a>
+                        </div>
+                        <div class="content_desc">
+                            <h4 class="content_title"><a href="Detail.aspx">Heading of Deal</a></h4>
+                            <p>Some Description : If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                            <div class="courses_info">
+                                <div class="rating_stars">
+                                    <ul class="list_none content_meta">
+                                        <li><a href="#">Dated: 31, May 2019</a></li>
+
+                                    </ul>
+                                </div>
+                                <ul class="list_none content_meta">
+                                    <li><a href="#"><i class="ti-thumb-up"></i>31</a></li>
+                                    <li><a href="#"><i class="ti-thumb-down"></i>10</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content_footer">
+                            <div class="teacher">
+                                <a href="#"><span> Posted by: Alia Noor</span></a>
+                            </div>
+                            <div class="price">
+                                <span class="alert alert-success">Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="content_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                        <div class="content_img">
+                            <a href="Detail.aspx"><img src="~/assets/images/course_img3.jpg" alt="course_img1" /></a>
+                        </div>
+                        <div class="content_desc">
+                            <h4 class="content_title"><a href="Detail.aspx">Heading of Deal</a></h4>
+                            <p>Some Description : If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                            <div class="courses_info">
+                                <div class="rating_stars">
+                                    <ul class="list_none content_meta">
+                                        <li><a href="#">Dated: 31, May 2019</a></li>
+
+                                    </ul>
+                                </div>
+                                <ul class="list_none content_meta">
+                                    <li><a href="#"><i class="ti-thumb-up"></i>31</a></li>
+                                    <li><a href="#"><i class="ti-thumb-down"></i>10</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content_footer">
+                            <div class="teacher">
+                                <a href="#"><span> Posted by: Alia Noor</span></a>
+                            </div>
+                            <div class="price">
+                                <span class="alert alert-success">Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.07s">
+                        <div class="medium_divider"></div>
+                        <a href="Bargains.aspx" class="btn btn-default rounded-0">View All Bargains <i class="ion-ios-arrow-thin-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+<!-- END SECTION COURSES -->
+<!-- START SECTION COUNTER -->
+<section class="parallax_bg overlay_bg_blue_70" data-parallax-bg-image="~/assets/images/video_bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-6 ">
+                <div class="box_counter counter_style1 text_white text-center animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                    <div class="counter_icon">
+                        <img src="~/assets/images/counter_icon2.png" alt="counter_icon2" />
+                    </div>
+                    <div class="counter_content">
+                        <h3 class="counter_text"><span class="counter">70</span></h3>
+                        <p>Today's Bargain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6 ">
+                <div class="box_counter counter_style1 text_white text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                    <div class="counter_icon">
+                        <img src="~/assets/images/counter_icon1.png" alt="counter_icon1" />
+                    </div>
+                    <div class="counter_content">
+                        <h3 class="counter_text"><span class="counter">1800</span>+</h3>
+                        <p>Total Bargains</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-6 ">
+                <div class="box_counter counter_style1 text_white text-center animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                    <div class="counter_icon">
+                        <img src="~/assets/images/counter_icon3.png" alt="counter_icon3" />
+                    </div>
+                    <div class="counter_content">
+                        <h3 class="counter_text"><span class="counter">700</span>+</h3>
+                        <p>Specials</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-6 ">
+                <div class="box_counter counter_style1 text_white text-center animation" data-animation="fadeInUp" data-animation-delay="0.05s">
+                    <div class="counter_icon">
+                        <img src="~/assets/images/counter_icon4.png" alt="counter_icon4" />
+                    </div>
+                    <div class="counter_content">
+                        <h3 class="counter_text"><span class="counter">1200</span>+</h3>
+                        <p>Competitions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION COUNTER -->
+<!-- START SECTION TEACHER -->
+@*<section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                        <div class="heading_s1 text-center">
+                            <h2>Our Team</h2>
+                        </div>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team_box team_style3 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                        <div class="team_img">
+                            <img src="~/assets/images/team_img1.jpg" alt="team1">
+                        </div>
+                        <div class="team_title radius_lbrb_10 text-center">
+                            <h5><a href="#">Aden Smith</a></h5>
+                            <span>Designation ------ </span>
+                            <ul class="list_none social_icons">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team_box team_style3 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                        <div class="team_img">
+                            <img src="~/assets/images/team_img2.jpg" alt="team2">
+                        </div>
+                        <div class="team_title radius_lbrb_10 text-center">
+                            <h5><a href="#">Kally Brooks</a></h5>
+                            <span>Designation ------ </span>
+                            <ul class="list_none social_icons">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team_box team_style3 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                        <div class="team_img">
+                            <img src="~/assets/images/team_img3.jpg" alt="team3">
+                        </div>
+                        <div class="team_title radius_lbrb_10 text-center">
+                            <h5><a href="#">David clark</a></h5>
+                            <span>Designation ------ </span>
+                            <ul class="list_none social_icons">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team_box team_style3 animation" data-animation="fadeInUp" data-animation-delay="0.05s">
+                        <div class="team_img">
+                            <img src="~/assets/images/team_img6.jpg" alt="team6">
+                        </div>
+                        <div class="team_title radius_lbrb_10 text-center">
+                            <h5><a href="#">Jesica Belly</a></h5>
+                            <span>Designation ------ </span>
+                            <ul class="list_none social_icons">
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+<!-- END SECTION TEACHER -->
+<!-- START SECTION TESTIMONIAL -->
+<section class="background_bg bg_fixed" data-img-src="~/assets/images/pattern_bg3.png">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                    <div class="heading_s1 text-center">
+                        <h2>Testimonials!</h2>
+                    </div>
+                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                    <div class="small_divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                <div class="testimonial_slider testimonial_style2 carousel_slider owl-carousel owl-theme" data-margin="30" data-loop="true" data-autoplay="true" data-dots="false" data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "576":{"items": "2"}, "1199":{"items": "3"}}'>
+                    <div class="testimonial_box">
+                        <div class="testimonial_img">
+                            <img src="~/assets/images/client_img1.jpg" alt="client">
+                        </div>
+                        <div class="testi_meta">
+                            <div class="testi_user">
+                                <h6>Lissa Castro</h6>
+                                @*<%--<span class="text_default">Co-Founder</span>--%>*@
+                            </div>
+                            <div class="testi_desc">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, quaeillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial_box">
+                        <div class="testimonial_img">
+                            <img src="~/assets/images/client_img2.jpg" alt="client">
+                        </div>
+                        <div class="testi_meta">
+                            <div class="testi_user">
+                                <h6>Lissa Castro</h6>
+                                @*<%--	<span class="text_default">Co-Founder</span>--%>*@
+                            </div>
+                            <div class="testi_desc">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, quaeillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial_box">
+                        <div class="testimonial_img">
+                            <img src="~/assets/images/client_img3.jpg" alt="client">
+                        </div>
+                        <div class="testi_meta">
+                            <div class="testi_user">
+                                <h6>Lissa Castro</h6>
+                                @*<%--<span class="text_default">Co-Founder</span>--%>*@
+                            </div>
+                            <div class="testi_desc">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, quaeillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION TESTIMONIAL -->
+<!-- START SECTION INQUIRY -->
+
+@*<section class="pb-0 background_bg bg_blue_dark" data-img-src="~/assets/images/pattern_bg.png">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-6 col-md-7">
+                <div class="register_form text_white padding_eight_all animation" data-animation="fadeInLeft" data-animation-delay="0.02s">
+                    <div class="heading_s1 heading_light">
+                        <h2>Get a Free <span class="text_default">Inquiry</span></h2>
+                    </div>
+                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything hidden in the middle of text</p>
+                    <form method="post" name="enq" class="pt-md-2 form_transparent">
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <input placeholder="Enter Name *" class="form-control" name="name" type="text">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input placeholder="Enter Email *" class="form-control" name="email" type="email">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input placeholder="Enter Phone No *" class="form-control" name="phone" type="tel">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <div class="custom_select">
+                                    <select class="form-control">
+                                        <option>Select Course</option>
+                                        <option>Select Course 1</option>
+                                        <option>Select Course 2</option>
+                                        <option>Select Course 3</option>
+                                        <option>Select Course 4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <textarea placeholder="Message *" class="form-control" name="message" rows="4"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" title="Submit Your Message!" class="btn btn-default rounded-0" name="submit" value="Submit">Register Now</button>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="alert-msg" class="alert-msg text-center"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="large_divider"></div>
+            </div>
+            <div class="col-lg-6 col-md-5">
+                <div class="text-center animation" data-animation="fadeInRight" data-animation-delay="0.03s">
+                    <img src="~/assets/images/girl_img.png" alt="girl_img" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+<!-- END SECTION INQUIRY -->
+<!-- START SECTION CLIENT LOGO -->
+
+@*<section class="light_gray_bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                    <div class="heading_s1 text-center">
+                        <h2>Our Brands</h2>
+                    </div>
+                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                    <div class="small_divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                <div class="cl_logo_slider carousel_slider owl-carousel owl-theme" data-margin="15" data-loop="true" data-autoplay="true" data-dots="false" data-responsive='{"0":{"items": "2"}, "380":{"items": "3"}, "600":{"items": "4"}, "1000":{"items": "5"}, "1199":{"items": "6"}}'>
+                    <div class="item">
+                        <a href="#"><img src="~/assets/images/cl_logo1.png" alt="cl_logo1" /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="~/assets/images/cl_logo2.png" alt="cl_logo2" /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="~/assets/images/cl_logo3.png" alt="cl_logo3" /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="~/assets/images/cl_logo4.png" alt="cl_logo4" /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="~/assets/images/cl_logo5.png" alt="cl_logo5" /></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="~/assets/images/cl_logo2.png" alt="cl_logo2" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+<script src="~/assets/js/jquery-1.12.4.min.js"></script>
+
+
+@if (TempData["msg"] != "")
+{
+    @Html.Raw(TempData["msg"]);
+
+}
+
+
+
+<script>
+
+
+    function addLike(id, likevalue, like) {
+
+        $(function () {
+            var userId = '@Session["MemberId"]';
+            if (userId == "") {
+                alert("Please Login First")
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/AjaxMethod",
+                    data: '{"id":' + id + ',"value":' + like + ',"Oldvalue":' + likevalue + '}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        location.reload(true);
+
+                        //var str = ".LikValue+" + id;
+                        //$(str).text(response);
+                    },
+                    failure: function (response) {
+
+                    },
+                    error: function (response) {
+
+                    }
+                });
+            }
+
+
+        });
+    }
+
+
+
+
+</script>
+

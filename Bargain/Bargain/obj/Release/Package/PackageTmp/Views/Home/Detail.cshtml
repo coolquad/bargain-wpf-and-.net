@@ -1,0 +1,310 @@
+﻿@model Bargain.Models.BargainModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+<!-- START SECTION BREADCRUMB -->
+
+<section class="page-title-light breadcrumb_section parallax_bg overlay_bg_50" data-parallax-bg-image="/assets/images/about_bg.jpg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h1> @Model.Heading </h1>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-sm-end">
+                        <li class="breadcrumb-item"><a href="/Home/Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@Model.Heading</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION BANNER -->
+<!-- START SECTION COURSE DETAIL -->
+<section>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-9">
+                <div class="single_event">
+                    <div class="content_img">
+
+                        <div id="carouselExampleFade" class="banner_content_wrap carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                                @{int i = 0;}
+                                @foreach (var items in Model.listBagainsImages)
+                                {
+                                    i++;
+                                    var active = i == 1 ? "active" : "";
+                                    <div class="carousel-item @active">
+                                        <img src="~/Images/@items.fileName" alt="" height="350px">
+                                    </div>
+                                }
+                            </div>
+                            <div class="carousel-nav carousel_style1">
+                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                    <i class="ion-chevron-left"></i>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                    <i class="ion-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        @*<div class="event_date radius_all_5">
+                                <h5><span>@Model.EntryDate.ToString("dd")</span> @Model.EntryDate.ToString("MMM")</h5>
+                                <span class="event_time radius_lbrb_5 bg_default">10:00 am 3:00 pm</span>
+                            </div>*@
+
+                    </div>
+                    <div class="event_title">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                                <h2>@Model.Heading</h2>
+                                <ul class="list_none content_meta mt-2">
+                                    <li><i class="ti-user"></i> <a href="#" class="text_default">Posted by: @Model.PostedName</a></li>
+                                    <li><i class="ti-flag-alt"></i><span class="text_default">@Model.Special</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-md-right">
+                                    <ul class="list_none social_icons">
+                                        @*<li><a href="#"><i class="ti-thumb-up"></i>31</a></li>
+                                            <li><a href="#"><i class="ti-thumb-down"></i>10</a></li>*@
+
+                                        <li><a href="#" style="color:green !important;font-weight:bold;" onclick="addLike(@Model.ID,@Model.BargainLike,1);"><i class="fa fa-thumbs-up"></i><span id="finalReceiptForm:text3" class="LikValue+@Model.ID">@Model.BargainLike</span> </a></li>
+                                        <li><a href="#" style="color:red !important; font-weight:bold;" onclick="addLike(@Model.ID,@Model.BargainDislike,2);"><i class="fa fa-thumbs-down"></i><span class="DisValue+@Model.ID">@Model.BargainDislike</span> </a></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="post-comment"></div>
+                    <div class="entry_content">
+                        <p>@Html.Raw(HttpUtility.HtmlDecode(Model.Description))</p>
+                    </div>
+
+
+
+                    <div class="event_title">
+                        <div class="row align-items-end" style="background-color:#FFBC09 !important;padding:10px;box-sizing:border-box">
+                            <div class="col-md-12">
+                                <h2>Comments <a href="#Commments" class="btn btn-sm btn-danger pull-right">Post a comment</a></h2>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="post-comment"></div>
+                    <div class="entry_content">
+                        @if (Model.listBargainsCommentParentsModel != null)
+                        {
+
+
+                            if (Model.listBargainsCommentParentsModel.Count > 0)
+                            {
+                                foreach (var ParComitem in Model.listBargainsCommentParentsModel)
+                                {
+                                    <div style="background-color:#fcfcfc; padding:10px;box-sizing:border-box;margin-bottom:10px;border-right:5px solid #FFBC09;border-radius:5px;">
+                                        <strong><i class="fa fa-user"></i> Posted by @ParComitem.FirstName</strong><br />
+                                        @ParComitem.Comment
+                                        <span>
+                                            <input type="submit" value="Reply" name="Reply" class="btn btn-xs btn-info pull-right" onclick="GetComReply(@ParComitem.ID,@Model.ID)" />
+                                            @*@Html.ActionLink("Reply", "Reply", new { comId = @comitem.ID, bargId = @Model.ID }, new { @class = "btn btn-xs btn-info" })*@
+                                        </span>
+
+                                        @if (Model.listBargainsCommentChildModel.Count > 0)
+                                    {
+                                        foreach (var ChildComitem in Model.listBargainsCommentChildModel)
+                                        {
+                                            if (ParComitem.ID == ChildComitem.ParentId)
+                                            {
+                                    <div style="background-color:#f2f2f2; margin-left:20px;margin-top:10px; padding:10px;box-sizing:border-box;margin-bottom:10px;border-right:5px solid #07294D;border-radius:5px;">
+                                        <strong>Posted by @ChildComitem.FirstName</strong><br />
+                                        @ChildComitem.Comment
+
+                                    </div>
+                                            }
+                                        }
+                                    }
+
+                                    </div>
+
+                                }
+                            }
+                        }
+
+
+                    </div>
+                    <br />
+
+                    <div class="radius_all_10 box_shadow1 p-4">
+                        <div class="comment-title mb-2 mb-sm-4">
+                            <h5>Post a comment</h5>
+                        </div>
+                        @using (Html.BeginForm("Detail", "Home", FormMethod.Post))
+                        {
+
+                            <div class="row">
+
+                                <div class="form-group col-md-12">
+                                    @Html.Hidden("Id", "", new { @value = @Model.ID, @class = "DetailId" })
+                                    @Html.Hidden("commentID", "", new { @value = 0 })
+                                    @Html.TextArea("description", "", new { @class = "form-control", @rows = 2, @autocomplete = "off", @placeholder = "Your Comment" })
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <button value="Submit" name="submit" id="csubmitButton" class="btn btn-default" title="Submit Your Message!" type="submit">Submit</button>
+                                    <div>
+                                        <div class="alert-msg text-center" id="alert-msg"></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        }
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 mt-lg-0 mt-4 pt-3 pt-lg-0">
+                <div class="sidebar">
+
+                    <div class="widget widget_recent_course">
+                        <h5 class="widget_title">Other Bargains</h5>
+                        <ul class="recent_post border_bottom_dash list_none">
+                            <li>
+                                <div class="post_footer">
+                                    <div class="post_img">
+                                        <a href="#"><img src="~/assets/images/letest_course1.jpg" alt="letest_course1"></a>
+                                    </div>
+                                    <div class="post_content">
+                                        <h6><a href="#">Nullam id varius nunc id varius nunc</a></h6>
+                                        <span class="text-success small">Free</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post_footer">
+                                    <div class="post_img">
+                                        <a href="#"><img src="~/assets/images/letest_course2.jpg" alt="letest_course2"></a>
+                                    </div>
+                                    <div class="post_content">
+                                        <h6><a href="#">Nullam id varius nunc id varius nunc</a></h6>
+                                        <span class="text-info small">$49</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post_footer">
+                                    <div class="post_img">
+                                        <a href="#"><img src="~/assets/images/letest_course3.jpg" alt="letest_course3"></a>
+                                    </div>
+                                    <div class="post_content">
+                                        <h6><a href="#">Nullam id varius nunc id varius nunc</a></h6>
+                                        <span class="text-success small">Free</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget widget_categories">
+                        <h5 class="widget_title">Course Categories</h5>
+                        <ul>
+                            <li><a href="#"><span class="categories_name">Today's Bargains</span><span class="categories_num">(9)</span></a></li>
+                            <li><a href="#"><span class="categories_name">Yesterday's Bargains</span><span class="categories_num">(6)</span></a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION COURSE DETAIL -->
+<!-- END SECTION CALL TO ACTION -->
+<section class="bg_default small_pt small_pb">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="text_white cta_section">
+                    <div class="medium_divider d-block d-md-none"></div>
+                    <div class="heading_s1 heading_light">
+                        <h2>Get The Coaching Training Today!</h2>
+                    </div>
+                    <p>If you are going to use a passage of embarrassing hidden in the middle of text</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-md-right">
+                    <a href="#" class="btn btn-outline-white">Get Started</a>
+                </div>
+                <div class="medium_divider d-block d-md-none"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION CALL TO ACTION -->
+
+@if (TempData["msg"] != "")
+{
+    @Html.Raw(TempData["msg"]);
+
+}
+
+<script>
+
+
+    function addLike(id, likevalue, like) {
+
+        $(function () {
+            var userId = '@Session["MemberId"]';
+            if (userId == "") {
+                alert("Please Login First")
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/AjaxMethod",
+                    data: '{"id":' + id + ',"value":' + like + ',"Oldvalue":' + likevalue + '}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        location.reload(true);
+
+                        //var str = ".LikValue+" + id;
+                        //$(str).text(response);
+                    },
+                    failure: function (response) {
+
+                    },
+                    error: function (response) {
+
+                    }
+                });
+            }
+
+
+        });
+    }
+
+    //set Comment id for Reply
+    function GetComReply(comId, BargId) {
+        //  alert(comId);
+        $("#commentID").val(comId);
+        $("#Id").val(comId);
+        $(".DetailId").val(BargId);
+        $("#description").focus();
+    }
+
+
+
+
+</script>

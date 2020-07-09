@@ -1,0 +1,135 @@
+﻿@model Bargain.Models.BargainModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @*<div class="page-content">*@
+    <div class="page-bar">
+        <div class="page-title-breadcrumb">
+            <div class=" pull-left">
+                <div class="page-title">Bargain List</div>
+            </div>
+            <ol class="breadcrumb page-breadcrumb pull-right">
+                <li>
+                    <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="#">Bargain List</a>&nbsp;<i class="fa fa-angle-right"></i>
+                </li>
+
+                <li class="active">Bargain List</li>
+            </ol>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Index", "Bargain", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                @Html.RadioButtonFor(m => m.ApproveStatus, "", new { @checked = "true" })<label>&nbsp;All</label>
+                @Html.RadioButtonFor(m => m.ApproveStatus, "0")<label>&nbsp;Waiting</label>
+                @Html.RadioButtonFor(m => m.ApproveStatus, "1")<label>&nbsp;Approved</label>
+                @Html.RadioButtonFor(m => m.ApproveStatus, "2")<label>&nbsp;Rejected</label>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <button type="submit" class="btn btn-info"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    }
+
+
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="card card-topline-aqua">
+
+                <div class="card-body ">
+
+                    @if (Model.listBargainModel.Count > 0)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover table-checkable order-column" style="width: 100%" id="example4">
+                                <thead>
+                                    <tr>
+                                        <th># </th>
+                                        <th></th>
+                                        <th>Heading </th>
+
+                                        <th width="50px">URL </th>
+                                        <th>StartDate </th>
+                                        <th>EndDate </th>
+                                        <th>Promocode </th>
+                                        <th>Tags </th>
+                                        <th>Status </th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @{int i = 1;
+                                    foreach (var item in Model.listBargainModel)
+                                    {
+                                        <tr class="odd gradeX">
+                                            <td><span>@i</span></td>
+                                            <td><img src="../Images/@item.ImagePath" alt="" width="80" /></td>
+                                            <td>@item.Heading</td>
+
+                                            <td>@item.URL</td>
+                                            <td>@item.StartDate.ToString("dd MMM yyyy")</td>
+                                            <td>@item.EndDate.ToString("dd MMM yyyy")</td>
+                                            <td>@item.Promocode</td>
+                                            <td>@item.Tags</td>
+                                            <td>@item.ApproveStatus</td>
+
+                                            @if (item.ApproveId == 1)
+                                            {
+                                                <td>@Html.ActionLink("Approve", "Approve", new { id = @item.ID, @Area = "Admin" }, new { @class = "btn btn-xs btn-info disabled" })</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@Html.ActionLink("Approve", "Approve", new { id = @item.ID, @Area = "Admin" }, new { @class = "btn btn-xs btn-info" })</td>
+                                                
+                                            }
+                                            @if (item.ApproveId == 2)
+                                            {
+                                                <td>@Html.ActionLink("Reject", "Decline", new { id = @item.ID, @Area = "Admin" }, new { @class = "btn btn-xs btn-danger disabled" })</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@Html.ActionLink("Reject", "Decline", new { id = @item.ID, @Area = "Admin" }, new { @class = "btn btn-xs btn-danger" })</td>
+                                            }
+
+
+                                            
+                                            <td>@Html.ActionLink("Comments", "Index", new { id = @item.ID, @Area = "Admin" }, new { @class = "btn btn-xs btn-warning" })</td>
+                                        </tr>
+                                            i++;
+                                    }
+                                    }
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    }
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    @*</div>*@
+</div>
+@if (TempData["msg"] != "")
+{
+    @Html.Raw(TempData["msg"]);
+
+
+}
+

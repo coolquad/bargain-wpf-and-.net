@@ -1,0 +1,5 @@
+﻿body {
+}
+.mdl-switch.is-checked .mdl-switch__thumb {
+    background:rgb(46, 206, 14) !important;
+}

@@ -1,0 +1,262 @@
+G:\DotNet Cotton\Bargain\Bargain\bin\Bargain.dll.config
+G:\DotNet Cotton\Bargain\Bargain\bin\Bargain.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Bargain.pdb
+G:\DotNet Cotton\Bargain\Bargain\bin\Antlr3.Runtime.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\EntityFramework.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\EntityFramework.SqlServer.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Web.Infrastructure.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Newtonsoft.Json.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\Owin.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Helpers.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Mvc.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Optimization.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Razor.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.WebPages.Deployment.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.WebPages.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.WebPages.Razor.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\WebGrease.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Helpers.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Mvc.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Optimization.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Razor.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.WebPages.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.WebPages.Deployment.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.WebPages.Razor.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Antlr3.Runtime.pdb
+G:\DotNet Cotton\Bargain\Bargain\bin\Newtonsoft.Json.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\EntityFramework.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\EntityFramework.SqlServer.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\DotNet Cotton\Bargain\Bargain\obj\Debug\Bargain.csprojResolveAssemblyReference.cache
+G:\DotNet Cotton\Bargain\Bargain\obj\Debug\Bargain.dll
+G:\DotNet Cotton\Bargain\Bargain\obj\Debug\Bargain.pdb
+D:\DOTNET COTTON\Bargain\Bargain\bin\Bargain.dll.config
+D:\DOTNET COTTON\Bargain\Bargain\bin\Bargain.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Bargain.pdb
+D:\DOTNET COTTON\Bargain\Bargain\bin\Antlr3.Runtime.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\EntityFramework.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\EntityFramework.SqlServer.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Web.Infrastructure.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Newtonsoft.Json.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Owin.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Helpers.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Mvc.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Optimization.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Razor.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.WebPages.Deployment.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.WebPages.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.WebPages.Razor.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\WebGrease.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Helpers.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Mvc.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Optimization.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Razor.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.WebPages.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.WebPages.Deployment.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.WebPages.Razor.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Antlr3.Runtime.pdb
+D:\DOTNET COTTON\Bargain\Bargain\bin\Newtonsoft.Json.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\EntityFramework.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\EntityFramework.SqlServer.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\DOTNET COTTON\Bargain\Bargain\obj\Debug\Bargain.csprojAssemblyReference.cache
+D:\DOTNET COTTON\Bargain\Bargain\obj\Debug\Bargain.csproj.CoreCompileInputs.cache
+D:\DOTNET COTTON\Bargain\Bargain\obj\Debug\Bargain.csproj.CopyComplete
+D:\DOTNET COTTON\Bargain\Bargain\obj\Debug\Bargain.dll
+D:\DOTNET COTTON\Bargain\Bargain\obj\Debug\Bargain.pdb
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Net.Http.Formatting.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Http.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Http.WebHost.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Net.Http.Formatting.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Http.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\System.Web.Http.WebHost.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Net.Http.Formatting.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Http.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Http.WebHost.dll
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Net.Http.Formatting.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Http.xml
+G:\DotNet Cotton\Bargain\Bargain\bin\System.Web.Http.WebHost.xml
+D:\Bargain\Bargain\bin\Bargain.dll.config
+D:\Bargain\Bargain\bin\Bargain.dll
+D:\Bargain\Bargain\bin\Bargain.pdb
+D:\Bargain\Bargain\bin\Antlr3.Runtime.dll
+D:\Bargain\Bargain\bin\EntityFramework.dll
+D:\Bargain\Bargain\bin\EntityFramework.SqlServer.dll
+D:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Bargain\Bargain\bin\Microsoft.Web.Infrastructure.dll
+D:\Bargain\Bargain\bin\Newtonsoft.Json.dll
+D:\Bargain\Bargain\bin\Owin.dll
+D:\Bargain\Bargain\bin\System.Net.Http.Formatting.dll
+D:\Bargain\Bargain\bin\System.Web.Helpers.dll
+D:\Bargain\Bargain\bin\System.Web.Http.dll
+D:\Bargain\Bargain\bin\System.Web.Http.WebHost.dll
+D:\Bargain\Bargain\bin\System.Web.Mvc.dll
+D:\Bargain\Bargain\bin\System.Web.Optimization.dll
+D:\Bargain\Bargain\bin\System.Web.Razor.dll
+D:\Bargain\Bargain\bin\System.Web.WebPages.Deployment.dll
+D:\Bargain\Bargain\bin\System.Web.WebPages.dll
+D:\Bargain\Bargain\bin\System.Web.WebPages.Razor.dll
+D:\Bargain\Bargain\bin\WebGrease.dll
+D:\Bargain\Bargain\bin\System.Net.Http.Formatting.xml
+D:\Bargain\Bargain\bin\System.Web.Http.xml
+D:\Bargain\Bargain\bin\System.Web.Http.WebHost.xml
+D:\Bargain\Bargain\bin\System.Web.Helpers.xml
+D:\Bargain\Bargain\bin\System.Web.Mvc.xml
+D:\Bargain\Bargain\bin\System.Web.Optimization.xml
+D:\Bargain\Bargain\bin\System.Web.Razor.xml
+D:\Bargain\Bargain\bin\System.Web.WebPages.xml
+D:\Bargain\Bargain\bin\System.Web.WebPages.Deployment.xml
+D:\Bargain\Bargain\bin\System.Web.WebPages.Razor.xml
+D:\Bargain\Bargain\bin\Antlr3.Runtime.pdb
+D:\Bargain\Bargain\bin\Newtonsoft.Json.xml
+D:\Bargain\Bargain\bin\EntityFramework.xml
+D:\Bargain\Bargain\bin\EntityFramework.SqlServer.xml
+D:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Bargain\Bargain\obj\Debug\Bargain.csprojAssemblyReference.cache
+D:\Bargain\Bargain\obj\Debug\Bargain.csproj.CoreCompileInputs.cache
+D:\Bargain\Bargain\obj\Debug\Bargain.csproj.CopyComplete
+D:\Bargain\Bargain\obj\Debug\Bargain.dll
+D:\Bargain\Bargain\obj\Debug\Bargain.pdb
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\DOTNET COTTON\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Bargain\Bargain\bin\Bargain.dll.config
+E:\Bargain\Bargain\bin\Bargain.dll
+E:\Bargain\Bargain\bin\Bargain.pdb
+E:\Bargain\Bargain\bin\Antlr3.Runtime.dll
+E:\Bargain\Bargain\bin\EntityFramework.dll
+E:\Bargain\Bargain\bin\EntityFramework.SqlServer.dll
+E:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Bargain\Bargain\bin\Microsoft.Web.Infrastructure.dll
+E:\Bargain\Bargain\bin\Newtonsoft.Json.dll
+E:\Bargain\Bargain\bin\Owin.dll
+E:\Bargain\Bargain\bin\System.Net.Http.Formatting.dll
+E:\Bargain\Bargain\bin\System.Web.Helpers.dll
+E:\Bargain\Bargain\bin\System.Web.Http.dll
+E:\Bargain\Bargain\bin\System.Web.Http.WebHost.dll
+E:\Bargain\Bargain\bin\System.Web.Mvc.dll
+E:\Bargain\Bargain\bin\System.Web.Optimization.dll
+E:\Bargain\Bargain\bin\System.Web.Razor.dll
+E:\Bargain\Bargain\bin\System.Web.WebPages.Deployment.dll
+E:\Bargain\Bargain\bin\System.Web.WebPages.dll
+E:\Bargain\Bargain\bin\System.Web.WebPages.Razor.dll
+E:\Bargain\Bargain\bin\WebGrease.dll
+E:\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\Bargain\Bargain\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Bargain\Bargain\bin\Newtonsoft.Json.xml
+E:\Bargain\Bargain\bin\System.Net.Http.Formatting.xml
+E:\Bargain\Bargain\bin\System.Web.Http.xml
+E:\Bargain\Bargain\bin\System.Web.Http.WebHost.xml
+E:\Bargain\Bargain\bin\System.Web.Helpers.xml
+E:\Bargain\Bargain\bin\System.Web.Mvc.xml
+E:\Bargain\Bargain\bin\System.Web.Optimization.xml
+E:\Bargain\Bargain\bin\System.Web.Razor.xml
+E:\Bargain\Bargain\bin\System.Web.WebPages.xml
+E:\Bargain\Bargain\bin\System.Web.WebPages.Deployment.xml
+E:\Bargain\Bargain\bin\System.Web.WebPages.Razor.xml
+E:\Bargain\Bargain\bin\Antlr3.Runtime.pdb
+E:\Bargain\Bargain\bin\EntityFramework.xml
+E:\Bargain\Bargain\bin\EntityFramework.SqlServer.xml
+E:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Bargain\Bargain\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Google.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Bargain\Bargain\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Bargain\Bargain\obj\Debug\Bargain.csprojAssemblyReference.cache
+E:\Bargain\Bargain\obj\Debug\Bargain.csproj.CoreCompileInputs.cache
+E:\Bargain\Bargain\obj\Debug\Bargain.csproj.CopyComplete
+E:\Bargain\Bargain\obj\Debug\Bargain.dll
+E:\Bargain\Bargain\obj\Debug\Bargain.pdb
